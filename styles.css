@@ -450,24 +450,30 @@ h2 {
 }
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12vw;
-  padding-top: 4.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.9fr);
+  align-items: start;
+  gap: clamp(3rem, 9vw, 9rem);
+  padding-top: clamp(4rem, 8vw, 7rem);
 }
 .contact-copy {
-  max-width: 27rem;
-  font-size: clamp(1.45rem, 2.3vw, 2.35rem);
-  line-height: 1.14;
-  letter-spacing: -0.01em;
+  max-width: 60rem;
+  font-size: clamp(2.1rem, 4.5vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 .contact-copy p {
   margin: 0 0 2rem;
 }
-.contact-copy p:last-child {
+.contact-copy .contact-response,
+.contact-copy .contact-email-copy {
   color: var(--muted);
+  font-size: clamp(1.15rem, 2vw, 1.8rem);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+.contact-copy .contact-email-copy {
   font-size: 0.95rem;
   line-height: 1.24;
-  letter-spacing: 0;
 }
 .email-copy {
   display: inline-flex;
@@ -502,6 +508,7 @@ h2 {
   outline-offset: 3px;
 }
 .contact-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

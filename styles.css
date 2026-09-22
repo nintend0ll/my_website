@@ -164,7 +164,9 @@ h1 {
   font-weight: 300;
 }
 .underline {
+  color: #b7a2e8;
   text-decoration: underline;
+  text-decoration-color: #b7a2e8;
   text-decoration-thickness: 0.06em;
   text-underline-offset: 0.08em;
 }

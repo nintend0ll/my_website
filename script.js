@@ -1,4 +1,5 @@
 const revealItems = document.querySelectorAll(".reveal");
+const copyEmailButton = document.querySelector(".copy-email");
 const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
@@ -19,3 +20,22 @@ if (reduceMotion) {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 }
+
+copyEmailButton?.addEventListener("click", async () => {
+  const email = copyEmailButton.dataset.email;
+
+  if (!email) return;
+
+  try {
+    await navigator.clipboard.writeText(email);
+    copyEmailButton.textContent = "Copiado";
+    copyEmailButton.setAttribute("aria-label", "Email copiado");
+
+    window.setTimeout(() => {
+      copyEmailButton.textContent = "Copiar";
+      copyEmailButton.setAttribute("aria-label", "Copiar email de Agustina");
+    }, 1800);
+  } catch {
+    copyEmailButton.textContent = "No se pudo copiar";
+  }
+});

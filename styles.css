@@ -469,10 +469,37 @@ h2 {
   line-height: 1.24;
   letter-spacing: 0;
 }
-.contact-copy a {
-  color: var(--ink);
+.email-copy {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.email-address {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+.copy-email {
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.copy-email:hover,
+.copy-email:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+.copy-email:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
 }
 .contact-form {
   display: flex;

@@ -18,6 +18,10 @@
 * {
   box-sizing: border-box;
 }
+::selection {
+  background: #b7a2e8;
+  color: var(--ink);
+}
 html {
   scroll-behavior: smooth;
 }

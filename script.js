@@ -1,5 +1,6 @@
 const revealItems = document.querySelectorAll(".reveal");
 const copyEmailButton = document.querySelector(".copy-email");
+const backToTopButton = document.querySelector(".back-to-top");
 const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
@@ -39,3 +40,18 @@ copyEmailButton?.addEventListener("click", async () => {
     copyEmailButton.textContent = "No se pudo copiar";
   }
 });
+
+backToTopButton?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: reduceMotion ? "auto" : "smooth",
+  });
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    backToTopButton?.classList.toggle("is-visible", window.scrollY > 420);
+  },
+  { passive: true },
+);

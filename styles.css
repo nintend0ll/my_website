@@ -509,12 +509,13 @@ h2 {
     color 0.2s ease;
 }
 .copy-email:hover,
-.copy-email:focus-visible {
-  background: var(--ink);
+.copy-email:focus-visible,
+.copy-email.is-copied {
+  background: #b7a2e8;
   color: var(--paper);
 }
 .copy-email:focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid #b7a2e8;
   outline-offset: 3px;
 }
 .contact-form {

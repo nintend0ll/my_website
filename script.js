@@ -30,10 +30,12 @@ copyEmailButton?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(email);
     copyEmailButton.textContent = "Copiado";
+    copyEmailButton.classList.add("is-copied");
     copyEmailButton.setAttribute("aria-label", "Email copiado");
 
     window.setTimeout(() => {
       copyEmailButton.textContent = "Copiar";
+      copyEmailButton.classList.remove("is-copied");
       copyEmailButton.setAttribute("aria-label", "Copiar email de Agustina");
     }, 1800);
   } catch {

@@ -367,6 +367,9 @@ h2 {
 .about-copy p {
   margin: 0 0 2rem;
 }
+.about-copy .about-name {
+  color: #b7a2e8 !important;
+}
 .about-copy p:last-child {
   color: var(--muted);
   font-size: 0.95rem;
